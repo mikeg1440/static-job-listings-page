@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <img className='app-header' src={headerImg} alt='header' />
-
+      {console.table(data)}
       <div className='listing-container'>
-        <Job/>
+        {data.map(listing => <Job key={listing.id} listing={listing} />)}
       </div>
     </div>
   );
