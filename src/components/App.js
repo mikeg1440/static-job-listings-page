@@ -8,6 +8,10 @@ function App() {
   return (
     <div className="App">
       <img className='app-header' src={headerImg} alt='header' />
+
+      <div className='listing-container'>
+        
+      </div>
     </div>
   );
 }
