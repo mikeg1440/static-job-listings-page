@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 
 const Job = ({listing}) => (
   <div className={listing.featured ? 'job-listing featured' : 'job-listing' }>
@@ -22,8 +23,8 @@ const Job = ({listing}) => (
     <div className='label-container'>
       <label>{listing.role}</label>
       <label>{listing.level}</label>
-      {listing.tools ? listing.tools.map(tool => <label>{tool}</label>) : null}
-      {listing.languages ? listing.languages.map(language => <label>{language}</label>) : null}
+      {listing.tools ? listing.tools.map(tool => <label key={uniqid()}>{tool}</label>) : null}
+      {listing.languages ? listing.languages.map(language => <label key={uniqid()}>{language}</label>) : null}
     </div>
   </div>
 );
