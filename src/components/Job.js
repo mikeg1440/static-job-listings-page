@@ -3,7 +3,7 @@ import React from 'react';
 const Job = ({listing}) => (
   <div className={listing.featured ? 'job-listing featured' : 'job-listing' }>
     <div className='logo-container'>
-      <img className='company-logo' src={listing.logo} />
+      <img className='company-logo' src={listing.logo} alt={listing.company + ' logo'} />
     </div>
 
     <div className='details-container'>
