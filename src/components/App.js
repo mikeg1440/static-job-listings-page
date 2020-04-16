@@ -31,6 +31,15 @@ class App extends React.Component {
     }else {
       const newFilter = this.state.filter.filter(label => label !== labelToRemove)
       this.setState({
+  findCommonFilter = (array1, array2) => {
+    for (const elem1 of array1){
+      for (const elem2 of array2){
+        if (elem1 === elem2) return true
+      }
+    }
+    return false
+  }
+
   render(){
     return (
       </div>
