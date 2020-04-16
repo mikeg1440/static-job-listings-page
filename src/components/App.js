@@ -6,13 +6,6 @@ import './App.css';
 
 const data = require('../data.json');
 
-function App() {
-  return (
-    <div key={uniqid()} className="App">
-      <img className='app-header' src={headerImg} alt='header banner' />
-      {console.table(data)}
-      <div className='listing-container'>
-        {data.map(listing => <Job key={listing.id} listing={listing} />)}
 class App extends React.Component {
   constructor(){
     super()
@@ -20,6 +13,24 @@ class App extends React.Component {
       filter: []
     }
   }
+
+  addFilter = (term) => {
+    const {filter} = this.state
+    if (!filter.includes(term)){
+      this.setState({
+        filter: [...filter, term]
+      })
+    }
+  }
+
+  removeFilter = (labelToRemove) => {
+    if (labelToRemove === 'all'){
+      this.setState({
+        filter: []
+      })
+    }else {
+      const newFilter = this.state.filter.filter(label => label !== labelToRemove)
+      this.setState({
   render(){
     return (
       </div>
