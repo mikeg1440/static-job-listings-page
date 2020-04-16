@@ -29,4 +29,12 @@ const Job = ({listing}) => (
   </div>
 );
 
+const renderLabels = (listing, callback) => {
+  const {role, level, tools, languages} = listing
+  let labels = [role, level]
+  if (tools) labels.push(...tools)
+  if (languages) labels = [...labels, ...languages]
+  return labels.map(label => <label key={uniqid()} onClick={() => callback(label)}>{label}</label>)
+}
+
 export default Job;
