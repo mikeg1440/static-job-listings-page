@@ -22,10 +22,11 @@ const Job = ({listing, callback}) => (
     </div>
 
     <div className='label-container'>
-      <label>{listing.role}</label>
+      {/* <label>{listing.role}</label>
       <label>{listing.level}</label>
       {listing.tools ? listing.tools.map(tool => <label key={uniqid()}>{tool}</label>) : null}
-      {listing.languages ? listing.languages.map(language => <label key={uniqid()}>{language}</label>) : null}
+      {listing.languages ? listing.languages.map(language => <label key={uniqid()}>{language}</label>) : null} */}
+      {renderLabels(listing, callback)}
     </div>
   </div>
 );
