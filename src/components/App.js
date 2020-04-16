@@ -40,6 +40,19 @@ class App extends React.Component {
     return false
   }
 
+
+  renderFilters = () => {
+    const {filter} = this.state
+
+    return (
+      <div className='filter-container'>
+        <div className='filter-labels-container'>
+          {filter.map(label => <label className='filter-label'>{label}<button onClick={() => this.removeFilter(label)}>✖</button></label>)}
+        </div>
+        <a href="#" className='clear-label-link' onClick={() => this.removeFilter('all')}>Clear</a>
+      </div>
+    )
+  }
   render(){
     return (
       </div>
