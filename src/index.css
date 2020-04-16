@@ -139,4 +139,11 @@ body {
     float: left;
   }
 
+  .filter-container label {
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+    padding-left: .5rem;
+    border-radius: 5px;
+    margin-right: 1rem;
+  }
 }
