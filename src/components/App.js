@@ -31,6 +31,11 @@ class App extends React.Component {
     }else {
       const newFilter = this.state.filter.filter(label => label !== labelToRemove)
       this.setState({
+        filter: newFilter
+      })
+    }
+  }
+
   findCommonFilter = (array1, array2) => {
     for (const elem1 of array1){
       for (const elem2 of array2){
@@ -40,6 +45,21 @@ class App extends React.Component {
     return false
   }
 
+  renderListings = () => {
+    const {filter} = this.state
+    if (this.state.filter.length === 0){
+      return data.map(listing => <Job key={listing.id} callback={this.addFilter} listing={listing} />)
+    }else {
+      let listings = data.filter(listing => {
+        if (filter.includes(listing.role)) return listing
+        if (filter.includes(listing.level)) return listing
+        if (listing.tools && this.findCommonFilter(filter, listing.tools)) return listing
+        if (listing.languages && this.findCommonFilter(filter, listing.languages)) return listing
+      })
+
+      return listings.map(listing => <Job key={listing.id} callback={this.addFilter} listing={listing} />)
+    }
+  }
 
   renderFilters = () => {
     const {filter} = this.state
@@ -53,11 +73,19 @@ class App extends React.Component {
       </div>
     )
   }
+
   render(){
+    const {filter} = this.state
     return (
+      <div key={uniqid()} className="App">
+        <img className='app-header' src={headerImg} alt='header banner' />
+        {filter.length !== 0 ? this.renderFilters() : null}
+        <div className='listing-container'>
+          {/* {data.map(listing => <Job key={listing.id} callback={this.addFilter} listing={listing} />)} */}
+          {this.renderListings()}
+        </div>
       </div>
-    </div>
-  );
+    );
   }
 }
 
