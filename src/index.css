@@ -119,4 +119,17 @@ body {
     color: white;
   }
 
+  .filter-container {
+    padding: .5rem 1rem;
+    width: 80%;
+    background-color: white;
+    margin: 0 10%;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 120px;
+    -webkit-box-shadow: 2px 7px 19px -5px hsl(180, 29%, 50%);
+    -moz-box-shadow: 2px 7px 19px -5px hsl(180, 29%, 50%);
+    box-shadow: 2px 7px 19px -5px hsl(180, 29%, 50%);
+  }
 }
