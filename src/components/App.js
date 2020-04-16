@@ -13,9 +13,13 @@ function App() {
       {console.table(data)}
       <div className='listing-container'>
         {data.map(listing => <Job key={listing.id} listing={listing} />)}
+class App extends React.Component {
+  render(){
+    return (
       </div>
     </div>
   );
+  }
 }
 
 export default App;
