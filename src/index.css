@@ -162,4 +162,15 @@ body {
     background-color: black;
     color: white;
   }
+
+  .clear-label-link {
+    color: hsl(180, 29%, 50%);
+    float: right;
+    line-height: 2;
+  }
+
+  .clear-label-link:hover {
+    font-style: underline;
+  }
+
 }
