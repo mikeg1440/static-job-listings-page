@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import uniqid from 'uniqid';
 
-const Job = ({listing}) => (
+const Job = ({listing, callback}) => (
+
   <div className={listing.featured ? 'job-listing featured' : 'job-listing' }>
     <div className='logo-container'>
       <img className='company-logo' src={listing.logo} alt={listing.company + ' logo'} />
