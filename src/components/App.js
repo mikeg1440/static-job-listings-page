@@ -14,6 +14,12 @@ function App() {
       <div className='listing-container'>
         {data.map(listing => <Job key={listing.id} listing={listing} />)}
 class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      filter: []
+    }
+  }
   render(){
     return (
       </div>
