@@ -114,5 +114,9 @@ body {
     font-weight: bold;
   }
 
+  .label-container label:hover {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+  }
 
 }
